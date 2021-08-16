@@ -1,0 +1,50 @@
+{
+	"calculation_requests": [
+		{
+			"method": "CaversAccelerated",
+			"distribution": "NormalDist",
+			"filter": "FILTER_ON",
+			"g_filter": "EXPONENTIAL_FILTER",
+			"Hilbert": "right_hand_side_cont_func",
+			"density_disc_factor": "OFF",
+			"Hilbert_type": "SINC_METHOD",
+			"direction": "FORWARD_PROBLEM",
+			"Euler_acceleration": "ON",
+			"alpha_date_threshold": 100
+		},
+		{
+			"method": "FengLinetskyGreen",
+			"distribution": "NormalDist",
+			"filter": "FILTER_ON",
+			"g_filter": "EXPONENTIAL_FILTER",
+			"Hilbert": "right_hand_side_cont_func",
+			"density_disc_factor": "OFF",
+			"Hilbert_type": "SINC_METHOD",
+			"direction": "FORWARD_PROBLEM",
+			"alpha_date_threshold": 100
+		},
+		{
+			"method": "AbateWhitt",
+			"distribution": "NormalDist",
+			"filter": "FILTER_ON",
+			"g_filter": "EXPONENTIAL_FILTER",
+			"Hilbert": "right_hand_side_cont_func",
+			"density_disc_factor": "OFF",
+			"Hilbert_type": "SINC_METHOD",
+			"direction": "FORWARD_PROBLEM",
+			"Euler_acceleration": "ON",
+			"alpha_date_threshold": 100
+		}
+	],
+	"data": {
+		"num_dates": 252,
+		"expiry_T": 1,
+		"risk_free_rate": 0.05,
+		"dividend_rate": 0.0,
+		"spot_price": 100,
+		"strike_price": 90,
+		"option_type": "CALL",
+		"direction": "BACKWARD_PROBLEM",
+		"iteration_number": 11
+	}
+}

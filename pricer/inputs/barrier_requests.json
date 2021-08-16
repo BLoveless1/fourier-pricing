@@ -1,0 +1,58 @@
+{
+	"calculation_requests": [
+		{
+			"method": "WeinerHopfSpitzer_AbateWhitt",
+			"distribution": "NormalInverseGaussian",
+			"filter": "FILTER_ON",
+			"g_filter": "EXPONENTIAL_FILTER",
+			"Hilbert": "right_hand_side_cont_func",
+			"density_disc_factor": "ON",
+			"Hilbert_type": "SINC_METHOD",
+			"direction": "BACKWARD_PROBLEM",
+			"Euler_acceleration": "ON"
+		},
+		{
+			"method": "FengLinestky",
+			"distribution": "NormalInverseGaussian",
+			"filter": "FILTER_OFF",
+			"g_filter": "EXPONENTIAL_FILTER",
+			"Hilbert": "right_hand_side_cont_func",
+			"density_disc_factor": "ON",
+			"Hilbert_type": "SINC_METHOD",
+			"direction": "BACKWARD_PROBLEM"
+		},
+		{
+			"method": "WeinerHopfSpitzer_CaversAcceleratedEpsilon",
+			"distribution": "NormalInverseGaussian",
+			"filter": "FILTER_ON",
+			"g_filter": "EXPONENTIAL_FILTER",
+			"Hilbert": "right_hand_side_cont_func",
+			"density_disc_factor": "ON",
+			"Hilbert_type": "SINC_METHOD",
+			"direction": "BACKWARD_PROBLEM"
+		},
+		{
+			"method": "WeinerHopfSpitzer_CaversSum",
+			"distribution": "NormalInverseGaussian",
+			"filter": "FILTER_ON",
+			"g_filter": "EXPONENTIAL_FILTER",
+			"Hilbert": "right_hand_side_cont_func",
+			"density_disc_factor": "ON",
+			"Hilbert_type": "SINC_METHOD",
+			"direction": "BACKWARD_PROBLEM"
+		}
+	],
+	"data": {
+		"num_dates": 52,
+		"expiry_T": 1,
+		"risk_free_rate": 0.05,
+		"dividend_rate": 0.0,
+		"spot_price": 100,
+		"strike_price": 110,
+		"option_type": "CALL",
+		"direction": "BACKWARD_PROBLEM",
+		"lower_barrier": 80,
+		"upper_barrier": 115,
+		"iteration_number": 9
+	}
+}
