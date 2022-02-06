@@ -1,4 +1,4 @@
-from pricer.plots import *
+from pricer.core.plots import *
 from pricer.fourier.barrier_pricer import price_fourier_barrier_trades
 from pricer.fourier.alpha_quantile_pricer import price_fourier_aq_trades
 import csv

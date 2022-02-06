@@ -74,14 +74,22 @@ def price_array_levy(request, model, max_loop_num, truncation_alpha, bound, trun
         H = np.multiply(H, gf)
 
         t = time.time()
+
+        # J. Abate, W. Whitt. The Fourier-series method for inverting transforms of probability distributions.
+        # Queueing Systems, 10(1–2):5–88, 1992.
         if request['method'] == 'AbateWhitt':
             Solmm = izt_aw(H, request["Hilbert_type"], ndates-alpha_threshold, request["Euler_acceleration"], "PUT")
             SolMp = izt_aw(H, request["Hilbert_type"], alpha_threshold, request["Euler_acceleration"], "CALL")
 
+        # L. Feng, V. Linetsky. Pricing discretely monitored barrier options and defaultable bonds in L´evy
+        # process models: A fast Hilbert transform approach. Mathematical Finance, 18(3):337–384, 2008. doi:
+        # 10.1111/j.1467-9965.2008.00338.x.
         elif request['method'] == 'FengLinetskyGreen':
             Solmm = feng_linetsky_green(H, request["Hilbert_type"], ndates-alpha_threshold, "PUT")
             SolMp = feng_linetsky_green(H, request["Hilbert_type"], alpha_threshold, "CALL")
 
+        # B. Loveless, C. Phelan, G.Germano Accurate Fourier-z pricing of discretely monitored path-dependent options
+        # with L´evy processes. Working paper, 2022
         elif request['method'] == 'CaversAccelerated':
             Solmm = izt_cavers_acc(H, request["Hilbert_type"], ndates-alpha_threshold, "PUT")
             SolMp = izt_cavers_acc(H, request["Hilbert_type"], alpha_threshold, "CALL")
