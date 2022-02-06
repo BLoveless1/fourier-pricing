@@ -1,9 +1,8 @@
 import math
-import numpy as np
 from scipy.special import ive
 
 from pricer.fourier.models import *
-from pricer.constants import *
+from ..core.constants import *
 
 np.seterr(divide='ignore', invalid='ignore')
 

@@ -101,12 +101,16 @@ def price_array_levy(request, model, max_loop_num, truncation_alpha, bound, K, u
 
         elif request_string[0] == 'WeinerHopfSpitzer':
 
+            # J. Abate, W. Whitt. The Fourier-series method for inverting transforms of probability distributions.
+            # Queueing Systems, 10(1–2):5–88, 1992.
             t = time.time()
             if request_string[1] == 'AbateWhitt':
                 Sol = izt_aw(H, G, np.log(lower_barrier/scale_factor), np.log(upper_barrier/scale_factor), bound,
                              request["Hilbert_type"], request["filter"], request["g_filter"], ndates-2,
                              request["Euler_acceleration"])
 
+            # J. K. Cavers. On the fast Fourier transform inversion of probability generating functions. IMA Journal
+            # of Applied Mathematics, 22(3):275–282, 1978. doi: 10.1093/imamat/22.3.275.
             elif request_string[1] == 'Cavers':
                 Sol = izt_c(H, G, np.log(lower_barrier/scale_factor), np.log(upper_barrier/scale_factor), bound,
                             request["Hilbert_type"], request["filter"], request["g_filter"], ndates-2,
@@ -117,11 +121,15 @@ def price_array_levy(request, model, max_loop_num, truncation_alpha, bound, K, u
                                 request["Hilbert_type"], request["filter"], request["g_filter"], ndates-2,
                                 cavers_r["cavers_sum"])
 
+            # D. Shanks. Non-linear transformations of divergent and slowly convergent sequences. Journal of Mathematics
+            # and Physics, 34:1–42, 1955. doi: 10.1002/sapm19553411.
             elif request_string[1] == "CaversAcceleratedShanks":
                 Sol = izt_c_acc_s(H, G, np.log(lower_barrier/scale_factor), np.log(upper_barrier/scale_factor), bound,
                                   request["Hilbert_type"], request["filter"], request["g_filter"], ndates-2,
                                   cavers_r["cavers_acc"])
 
+            # P. Wynn. On a procrustean technique for the numerical transformation of slowly convergent sequences
+            # and series. Proc Cambridge Philos. Soc, 52:663–671, 1956.
             elif request_string[1] == "CaversAcceleratedEpsilon":
                 Sol = izt_c_acc_e(H, G, np.log(lower_barrier/scale_factor), np.log(upper_barrier/scale_factor), bound,
                                   request["Hilbert_type"], request["filter"], request["g_filter"], ndates-2,

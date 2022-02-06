@@ -1,12 +1,11 @@
-from pricer.price_handler import price_barrier_trades
-from pricer.price_handler import price_alpha_quantile_trades
+from pricer.core.request_handler import price_barrier_trades
+from pricer.core.request_handler import price_alpha_quantile_trades
 import json
 import sys
 import argparse
 
 
-if __name__ == "__main__":
-
+def main():
     # 0 - off, 1 - on
     Barrier = 0
     AlphaQuantile = 1
@@ -31,3 +30,7 @@ if __name__ == "__main__":
             )
 
     sys.exit()
+
+
+if __name__ == "__main__":
+    main()

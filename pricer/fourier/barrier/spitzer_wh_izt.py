@@ -1,7 +1,7 @@
 import numpy as np
 import copy as copy_
 
-from pricer.constants import (
+from pricer.core.constants import (
     FILTER_OFF,
     FILTER_ON,
     SINC_METHOD,

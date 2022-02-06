@@ -1,5 +1,5 @@
 import numpy as np
-from pricer.constants import (
+from pricer.core.constants import (
     FILTER_OFF,
     FILTER_ON,
     SINC_METHOD,

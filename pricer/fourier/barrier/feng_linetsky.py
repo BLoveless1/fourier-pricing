@@ -1,6 +1,6 @@
 import numpy as np
 
-from pricer.constants import *
+from pricer.core.constants import *
 from pricer.fourier.utility_functions import (
     gibbs_filter,
     inv_hilbert_trans
